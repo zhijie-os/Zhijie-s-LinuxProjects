@@ -1,8 +1,20 @@
+#! /bin/bash
+
+# Program to output a system information page
+
+# explicit delcaration of variable
+# no space around "=" sign !: VAR=value works; VAR = value doesn't work
+declare -r TITLE="System Information Report For $HOSTNAME"# HOSTNAME = the hostname of the current pc
+# declare -r enforce the immutability
+# Also use uppercase for constants, and TITLE and HOSTNAME are constants.
+
+#TITLE="Try to change" :-> error: TITLE:readonly variable
+
 echo	"<html>
 		<head>
-			<title>Page Title</title>
+			<title>$TITLE</title>
 		</head>
 		<body>
-			Page body.
+			<h1>$TITLE</h1>
 		</body>
 </html>"
